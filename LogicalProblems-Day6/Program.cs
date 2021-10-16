@@ -1,22 +1,34 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Logical_Programs
 {
-    class Program
+    class program
     {
         static void Main(string[] args)
-        {
-            int num, r, sum = 0;
-            Console.Write("Input a number: ");
-            num = Convert.ToInt32(Console.ReadLine());
 
-            for (int t = num; t != 0; t = t / 10)
-            {
-                r = t % 10;
-                sum = sum * 10 + r;
-            }
-            Console.Write("The number in reverse order is ", sum);
+        {
+            Console.WriteLine("Enter a number");
+            program.coupons();
         }
+
+        public static void coupons()
+        {
+            HashSet<int> odd = new HashSet<int>();
+            int num = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < num; i++)
+            {
+                int rand = new Random().Next(10000, 99999);
+                odd.Add(rand);
+            }
+            foreach (int i in odd)
+            {
+                Console.WriteLine(i);
+            }
+        }
+
 
     }
 }
