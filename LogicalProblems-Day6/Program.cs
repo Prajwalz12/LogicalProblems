@@ -6,23 +6,22 @@ namespace Logical_Programs
     {
         static void Main(string[] args)
         {
-            int num, rem, sum = 0;
-            Console.Write("Enter a no.");
-            num = int.Parse(Console.ReadLine());
+            int num, ctr = 0;
 
-            for (int i = 1; i < num; i++)
+            Console.Write("Input  a number: ");
+            num = Convert.ToInt32(Console.ReadLine());
+            for (int i = 2; i <= num / 2; i++)
             {
-                rem = num % i;
-                if (rem == 0)
+                if (num % i == 0)
                 {
-                    sum = sum + i;
+                    ctr++;
+                    break;
                 }
             }
-            if (sum == num)
-                Console.Write("perfect number");
+            if (ctr == 0 && num != 1)
+                Console.Write("{0} is a prime number.\n", num);
             else
-                Console.Write("Not a perfect number");
+                Console.Write("{0} is not a prime number\n", num);
         }
-
     }
 }
